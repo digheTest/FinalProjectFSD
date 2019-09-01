@@ -1,0 +1,59 @@
+<mat-form-field>
+  <input matInput (keyup)="search($event.target.value)" placeholder="Search" />
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" matSort style="width: 800px;">
+  <ng-container matColumnDef="task">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Task</th>
+    <td mat-cell *matCellDef="let taskFormModel">
+      {{ taskFormModel.task }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="parentTask">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Parent</th>
+    <td mat-cell *matCellDef="let taskFormModel">
+      {{ taskFormModel.parentTask }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="priority">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Priority</th>
+    <td mat-cell *matCellDef="let taskFormModel">
+      {{ taskFormModel.priority }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="startDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Start</th>
+    <td mat-cell *matCellDef="let taskFormModel">
+      {{ taskFormModel.startDate | date: "MM/dd/yyyy" }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>End</th>
+    <td mat-cell *matCellDef="let taskFormModel">
+      {{ taskFormModel.endDate | date: "MM/dd/yyyy" }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let taskFormModel">
+      <button
+        mat-raised-button
+        [disabled]="taskFormModel.isCompleted"
+        (click)="editAction(taskFormModel)"
+        style="margin-right: 10px;"
+      >
+        Edit
+      </button>
+      <button
+        mat-raised-button
+        [disabled]="taskFormModel.isCompleted"
+        (click)="endAction(taskFormModel)"
+      >
+        End Task
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns"></tr>
+</table>

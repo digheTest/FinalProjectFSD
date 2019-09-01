@@ -1,0 +1,10 @@
+<app-user-form
+  [userFormModel]="selectedUserFormModel"
+  (primaryUserFormAction)="processUserFormAction($event)"
+  (secondaryUserFormAction)="resetUserFormAction()"
+></app-user-form>
+<app-user-list-view
+  [userModels]="userModels"
+  (onEditAction)="processEditAction($event)"
+  (onDeleteAction)="processDeleteAction($event)"
+></app-user-list-view>

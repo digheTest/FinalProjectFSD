@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TaskManagerDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Parent_Task_Tbl">
+    <Key>
+      <PropertyRef Name="Parent_ID" />
+    </Key>
+    <Property Name="Parent_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parent_Task" Type="varchar" MaxLength="50" />
+    <Property Name="Project_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Project_Tbl">
+    <Key>
+      <PropertyRef Name="Project_ID" />
+    </Key>
+    <Property Name="Project_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Project" Type="varchar" MaxLength="50" />
+    <Property Name="Start_Date" Type="datetime" />
+    <Property Name="End_Date" Type="datetime" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="No_Tasks" Type="int" />
+    <Property Name="Completed_Tasks" Type="int" />
+  </EntityType>
+  <EntityType Name="Task_Tbl">
+    <Key>
+      <PropertyRef Name="Task_ID" />
+    </Key>
+    <Property Name="Task_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parent_ID" Type="int" />
+    <Property Name="Task" Type="varchar" MaxLength="250" />
+    <Property Name="Start_Date" Type="datetime" />
+    <Property Name="End_Date" Type="datetime" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Is_Completed" Type="bit" />
+    <Property Name="Project_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="User_Tbl">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="250" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="250" />
+    <Property Name="Project_ID" Type="int" />
+    <Property Name="Task_ID" Type="int" />
+    <Property Name="Employee_ID" Type="int" />
+  </EntityType>
+  <Association Name="FK__Task_Tbl__Parent__25869641">
+    <End Role="Parent_Task_Tbl" Type="Self.Parent_Task_Tbl" Multiplicity="0..1" />
+    <End Role="Task_Tbl" Type="Self.Task_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parent_Task_Tbl">
+        <PropertyRef Name="Parent_ID" />
+      </Principal>
+      <Dependent Role="Task_Tbl">
+        <PropertyRef Name="Parent_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Task_Tbl__Projec__3A81B327">
+    <End Role="Project_Tbl" Type="Self.Project_Tbl" Multiplicity="0..1" />
+    <End Role="Task_Tbl" Type="Self.Task_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_Tbl">
+        <PropertyRef Name="Project_ID" />
+      </Principal>
+      <Dependent Role="Task_Tbl">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Tbl__Projec__38996AB5">
+    <End Role="Project_Tbl" Type="Self.Project_Tbl" Multiplicity="0..1" />
+    <End Role="User_Tbl" Type="Self.User_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_Tbl">
+        <PropertyRef Name="Project_ID" />
+      </Principal>
+      <Dependent Role="User_Tbl">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Tbl__Task_I__398D8EEE">
+    <End Role="Task_Tbl" Type="Self.Task_Tbl" Multiplicity="0..1" />
+    <End Role="User_Tbl" Type="Self.User_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task_Tbl">
+        <PropertyRef Name="Task_ID" />
+      </Principal>
+      <Dependent Role="User_Tbl">
+        <PropertyRef Name="Task_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TaskManagerDbModelStoreContainer">
+    <EntitySet Name="Parent_Task_Tbl" EntityType="Self.Parent_Task_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_Tbl" EntityType="Self.Project_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Task_Tbl" EntityType="Self.Task_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Tbl" EntityType="Self.User_Tbl" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Task_Tbl__Parent__25869641" Association="Self.FK__Task_Tbl__Parent__25869641">
+      <End Role="Parent_Task_Tbl" EntitySet="Parent_Task_Tbl" />
+      <End Role="Task_Tbl" EntitySet="Task_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Task_Tbl__Projec__3A81B327" Association="Self.FK__Task_Tbl__Projec__3A81B327">
+      <End Role="Project_Tbl" EntitySet="Project_Tbl" />
+      <End Role="Task_Tbl" EntitySet="Task_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Tbl__Projec__38996AB5" Association="Self.FK__User_Tbl__Projec__38996AB5">
+      <End Role="Project_Tbl" EntitySet="Project_Tbl" />
+      <End Role="User_Tbl" EntitySet="User_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Tbl__Task_I__398D8EEE" Association="Self.FK__User_Tbl__Task_I__398D8EEE">
+      <End Role="Task_Tbl" EntitySet="Task_Tbl" />
+      <End Role="User_Tbl" EntitySet="User_Tbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

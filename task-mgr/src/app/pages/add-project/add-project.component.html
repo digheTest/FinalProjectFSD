@@ -1,0 +1,9 @@
+<app-project-form
+  [projectFormModel]="selectedProjectFormModel"
+  (onSubmit)="processProjectFormAction($event)"
+></app-project-form>
+<app-project-list-view
+  [projectModels]="projectModels"
+  (onUpdateAction)="processUpdateAction($event)"
+  (onSuspendAction)="processSuspendAction($event)"
+></app-project-list-view>

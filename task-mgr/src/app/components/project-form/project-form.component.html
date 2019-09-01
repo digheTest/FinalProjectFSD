@@ -1,0 +1,94 @@
+<mat-card class="project-form">
+  <mat-card-content>
+    <form
+      [formGroup]="projectForm"
+      (submit)="submitProjectForm(projectForm.value)"
+      (reset)="resetProjectForm()"
+    >
+      <mat-form-field>
+        <mat-label>Project</mat-label>
+        <input matInput formControlName="project" />
+      </mat-form-field>
+
+      <br />
+
+      <mat-checkbox formControlName="setDate"
+        >Set Start Date and End Date</mat-checkbox
+      >
+
+      <br />
+
+      <div *ngIf="projectForm.value.setDate">
+        <mat-form-field>
+          <mat-label>Start Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="startDatePicker"
+            formControlName="startDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="startDatePicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #startDatePicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>End Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="endDatePicker"
+            formControlName="endDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="endDatePicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #endDatePicker></mat-datepicker>
+        </mat-form-field>
+        <br />
+      </div>
+
+      <mat-label>Priority</mat-label>
+      <mat-slider
+        min="0"
+        max="30"
+        step="1"
+        formControlName="priority"
+        thumbLabel
+        tickInterval="1"
+      ></mat-slider>
+
+      <br />
+
+      <mat-form-field>
+        <mat-label>Manager</mat-label>
+        <input matInput formControlName="manager" readonly />
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="searchManager()"
+      >
+        Search
+      </button>
+
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!projectForm.valid"
+        >
+          {{ primaryBtnLbl }}
+        </button>
+
+        <button mat-raised-button type="reset" [disabled]="secondaryDisable">
+          Reset
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

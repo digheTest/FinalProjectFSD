@@ -1,0 +1,54 @@
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll.config
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.pdb
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.dll
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.xml
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csprojResolveAssemblyReference.cache
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.dll
+C:\Users\Admin\documents\visual studio 2017\Projects\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.pdb
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll.config
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.pdb
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.dll
+C:\Users\Admin\Documents\FSDProject\FSDTaskManager\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.pdb
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll.config
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.pdb
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.dll
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.xml
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csprojAssemblyReference.cache
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csproj.CoreCompileInputs.cache
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csproj.CopyComplete
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.dll
+C:\Users\prash\source\repos\FinalFSD_V1\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.pdb
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll.config
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.pdb
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.dll
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.xml
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csprojAssemblyReference.cache
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csproj.CoreCompileInputs.cache
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csproj.CopyComplete
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.dll
+C:\Users\prash\source\repos\FinalRepo\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.pdb
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll.config
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.dll
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\TaskManagerReference.pdb
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.dll
+C:\Users\Admin\Source\Repos\FinalRepo\FinalRepo\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.pdb
