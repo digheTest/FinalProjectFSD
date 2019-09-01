@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ProjectFormModel } from "src/app/models/project-form-model";
 import { ProjectService } from "src/app/services/project.service";
 import { UserService } from "src/app/services/user.service";
+import { Router } from "@angular/router";
+import { MatSnackBar } from "@angular/material";
 
 @Component({
   selector: "app-add-project",
@@ -15,7 +17,8 @@ export class AddProjectComponent implements OnInit {
 
   constructor(
     private projectService: ProjectService,
-    private userService: UserService
+    private userService: UserService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -34,9 +37,16 @@ export class AddProjectComponent implements OnInit {
 
   processSuspendAction(projectFormModel: ProjectFormModel) {
     this.projectService.deleteProject(projectFormModel).subscribe(() => {
-      this.projectService
-        .getAllProjects()
-        .subscribe(projects => (this.projectModels = projects));
+      this.projectService.getAllProjects().subscribe(projects => {
+        this.projectModels = projects;
+        this._snackBar.open(
+          `Project ${projectFormModel.project} suspended successfully!`,
+          "Close",
+          {
+            duration: 3000
+          }
+        );
+      });
     });
   }
 
@@ -54,9 +64,5 @@ export class AddProjectComponent implements OnInit {
           .subscribe(projects => (this.projectModels = projects));
       });
     }
-  }
-
-  resetProjectFormAction() {
-    this.selectedProjectFormModel = undefined;
   }
 }

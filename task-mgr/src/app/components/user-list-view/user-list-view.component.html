@@ -2,7 +2,7 @@
   <input matInput (keyup)="search($event.target.value)" placeholder="Search" />
 </mat-form-field>
 
-<table mat-table [dataSource]="dataSource" matSort style="width: 800px;">
+<table mat-table [dataSource]="dataSource" matSort class="custom-table">
   <ng-container matColumnDef="firstName">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
     <td mat-cell *matCellDef="let userFormModel">
@@ -27,11 +27,16 @@
       <button
         mat-raised-button
         (click)="editAction(userFormModel)"
-        style="margin-right: 10px;"
+        class="margin-right-small"
+        color="primary"
       >
         Edit
       </button>
-      <button mat-raised-button (click)="deleteAction(userFormModel)">
+      <button
+        mat-raised-button
+        (click)="deleteAction(userFormModel)"
+        color="warn"
+      >
         Delete
       </button>
     </td>

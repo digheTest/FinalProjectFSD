@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { TaskFormModel } from "src/app/models/task-form-model";
 import { TaskService } from "src/app/services/task.service";
 import { Router } from "@angular/router";
+import { MatSnackBar } from "@angular/material";
 
 @Component({
   selector: "app-view-task",
@@ -13,7 +14,11 @@ export class ViewTaskComponent implements OnInit {
 
   selectedUserFormModel: TaskFormModel;
 
-  constructor(private taskService: TaskService, private router: Router) {}
+  constructor(
+    private taskService: TaskService,
+    private router: Router,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit() {
     this.taskService
@@ -28,9 +33,16 @@ export class ViewTaskComponent implements OnInit {
 
   processEndAction(taskFormModel: TaskFormModel) {
     this.taskService.endTask(taskFormModel).subscribe(() => {
-      this.taskService
-        .getAllTasks()
-        .subscribe(tasks => (this.taskModels = tasks));
+      this.taskService.getAllTasks().subscribe(tasks => {
+        this.taskModels = tasks;
+        this._snackBar.open(
+          `Task ${taskFormModel.task} ended successfully!`,
+          "Close",
+          {
+            duration: 3000
+          }
+        );
+      });
     });
   }
 

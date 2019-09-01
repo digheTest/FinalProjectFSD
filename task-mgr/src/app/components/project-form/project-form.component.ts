@@ -8,7 +8,7 @@ import {
 } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ProjectFormModel } from "src/app/models/project-form-model";
-import { MatDialog } from "@angular/material";
+import { MatDialog, MatSnackBar } from "@angular/material";
 import { ItemSelectionDialogComponent } from "../item-selection-dialog/item-selection-dialog.component";
 import { DialogDataModel } from "src/app/models/dialog-data-model";
 import { ItemModel } from "src/app/models/item-model";
@@ -39,7 +39,14 @@ export class ProjectFormComponent implements OnChanges {
   @Output()
   onSubmit = new EventEmitter();
 
-  constructor(private userService: UserService, public dialog: MatDialog) {}
+  @Output()
+  onReset = new EventEmitter();
+
+  constructor(
+    private userService: UserService,
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnChanges(change: SimpleChanges) {
     this.projectFormModel = change.projectFormModel.currentValue;
@@ -94,6 +101,16 @@ export class ProjectFormComponent implements OnChanges {
       this.projectForm.get("startDate").updateValueAndValidity();
       this.projectForm.get("endDate").updateValueAndValidity();
     });
+
+    this.projectForm.get("setDate").valueChanges.subscribe(setData => {
+      if (setData) {
+        this.projectForm.get("startDate").setValue(undefined);
+        this.projectForm.get("endDate").setValue(undefined);
+
+        this.projectFormModel.startDate = undefined;
+        this.projectFormModel.endDate = undefined;
+      }
+    });
   }
 
   submitProjectForm(projectFormData) {
@@ -101,10 +118,17 @@ export class ProjectFormComponent implements OnChanges {
       mode: this.mode,
       projectFormData
     });
+    this._snackBar.open(
+      `Task ${projectFormData.project} created/updated successfully!`,
+      "Close",
+      {
+        duration: 3000
+      }
+    );
   }
 
   resetProjectForm() {
-    this.primaryBtnLbl = Constants.ADD;
+    this.projectForm.reset();
     this.projectFormModel = new ProjectFormModel();
   }
 
@@ -114,7 +138,6 @@ export class ProjectFormComponent implements OnChanges {
       .subscribe((managers: Array<UserFormModel>) => {
         const managerList = Utils.convertUsersToItems(managers);
         const dialogRef = this.dialog.open(ItemSelectionDialogComponent, {
-          disableClose: true,
           data: new DialogDataModel({
             itemType: "Manager",
             title: "Select Manager",
@@ -128,13 +151,15 @@ export class ProjectFormComponent implements OnChanges {
         });
 
         dialogRef.afterClosed().subscribe((data: ItemModel) => {
-          this.selectedManager = data;
-          this.projectForm
-            .get("manager")
-            .setValue(this.selectedManager.itemName);
-          this.projectForm
-            .get("managerID")
-            .setValue(this.selectedManager.itemID);
+          if (data) {
+            this.selectedManager = data;
+            this.projectForm
+              .get("manager")
+              .setValue(this.selectedManager.itemName);
+            this.projectForm
+              .get("managerID")
+              .setValue(this.selectedManager.itemID);
+          }
         });
       });
   }

@@ -3,7 +3,6 @@
     <form
       [formGroup]="projectForm"
       (submit)="submitProjectForm(projectForm.value)"
-      (reset)="resetProjectForm()"
     >
       <mat-form-field>
         <mat-label>Project</mat-label>
@@ -16,6 +15,7 @@
         >Set Start Date and End Date</mat-checkbox
       >
 
+      <br />
       <br />
 
       <div *ngIf="projectForm.value.setDate">
@@ -33,7 +33,7 @@
           <mat-datepicker #startDatePicker></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="margin-left-medium">
           <mat-label>End Date</mat-label>
           <input
             matInput
@@ -50,6 +50,7 @@
       </div>
 
       <mat-label>Priority</mat-label>
+      <br />
       <mat-slider
         min="0"
         max="30"
@@ -71,6 +72,7 @@
         color="primary"
         type="button"
         (click)="searchManager()"
+        class="margin-left-small"
       >
         Search
       </button>
@@ -85,7 +87,12 @@
           {{ primaryBtnLbl }}
         </button>
 
-        <button mat-raised-button type="reset" [disabled]="secondaryDisable">
+        <button
+          mat-raised-button
+          type="button"
+          color="accent"
+          (click)="resetProjectForm()"
+        >
           Reset
         </button>
       </mat-card-actions>

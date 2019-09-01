@@ -16,6 +16,7 @@
           color="primary"
           type="button"
           (click)="searchProject()"
+          class="margin-left-small"
         >
           Search
         </button>
@@ -65,6 +66,7 @@
           color="primary"
           type="button"
           (click)="searchParentTask()"
+          class="margin-left-small"
         >
           Search
         </button>
@@ -86,7 +88,7 @@
           ></mat-datepicker-toggle>
           <mat-datepicker #startDatePicker></mat-datepicker>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="margin-left-medium">
           <mat-label>End Date</mat-label>
           <input
             matInput
@@ -114,6 +116,7 @@
           color="primary"
           type="button"
           (click)="searchUser()"
+          class="margin-left-small"
         >
           Search
         </button>
@@ -129,7 +132,7 @@
           {{ primaryBtnLbl }}
         </button>
 
-        <button mat-raised-button type="reset" [disabled]="secondaryDisable">
+        <button mat-raised-button type="reset">
           Reset
         </button>
       </mat-card-actions>

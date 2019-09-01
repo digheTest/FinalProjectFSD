@@ -8,7 +8,7 @@
     />
   </mat-form-field>
 
-  <table mat-table [dataSource]="dataSource" style="width: 800px;">
+  <table mat-table [dataSource]="dataSource" class="custom-table">
     <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>Select</th>
       <td mat-cell *matCellDef="let itemModel">
@@ -37,6 +37,7 @@
     color="primary"
     type="button"
     (click)="processData()"
+    [disabled]="this.selectedItem.itemID === 0"
   >
     Save
   </button>

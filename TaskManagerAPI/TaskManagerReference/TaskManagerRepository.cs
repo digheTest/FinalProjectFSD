@@ -15,7 +15,7 @@ namespace TaskManagerReference
         public IQueryable<Task_Tbl> GetAllTaskRepo()
         {
             TaskManagerDbEntities tmdb = new TaskManagerDbEntities();
-            return tmdb.Task_Tbl.Where(t => t.Parent_ID == null || t.Parent_ID == 0);
+            return tmdb.Task_Tbl.Where(t => (t.Parent_ID == null || t.Parent_ID == 0) && t.Project_ID != null);
         }
         public Task_Tbl GetTaskRepo(int TaskID)
         {
@@ -198,12 +198,15 @@ namespace TaskManagerReference
             foreach (var projectID in tmdb.Task_Tbl.Where(t => t.Project_ID > 0).Select(t => t.Project_ID).ToList())
             {
                 Project_Tbl projectDb = tmdb.Project_Tbl.Where(p => p.Project_ID == projectID).FirstOrDefault();
-                projectDb.No_Tasks = tmdb.Task_Tbl.Where(t => t.Project_ID == projectID).ToList().Count();
-                projectDb.Completed_Tasks = tmdb.Task_Tbl.Where(t => t.Project_ID == projectID && t.Is_Completed == true).ToList().Count();
-                tmdb.Entry(projectDb).CurrentValues.SetValues(projectDb.No_Tasks);
-                tmdb.SaveChanges();
-                tmdb.Entry(projectDb).CurrentValues.SetValues(projectDb.Completed_Tasks);
-                tmdb.SaveChanges();
+                if (projectDb != null)
+                {
+                    projectDb.No_Tasks = tmdb.Task_Tbl.Where(t => t.Project_ID == projectID).ToList().Count();
+                    projectDb.Completed_Tasks = tmdb.Task_Tbl.Where(t => t.Project_ID == projectID && t.Is_Completed == true).ToList().Count();
+                    tmdb.Entry(projectDb).CurrentValues.SetValues(projectDb.No_Tasks);
+                    tmdb.SaveChanges();
+                    tmdb.Entry(projectDb).CurrentValues.SetValues(projectDb.Completed_Tasks);
+                    tmdb.SaveChanges();
+                }
             }
         }
     }

@@ -56,6 +56,5 @@ export class ProjectListViewComponent implements OnChanges {
 
   search(searchTerm: string) {
     this.dataSource.filter = searchTerm.trim().toLowerCase();
-    //TODO: Fix date search
   }
 }

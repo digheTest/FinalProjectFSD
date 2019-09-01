@@ -2,3 +2,23 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.margin-left-small {
+    margin-left: 10px !important;
+}
+.margin-right-small {
+    margin-right: 10px !important;
+}
+
+.margin-left-medium {
+    margin-left: 20px !important;
+}
+
+.custom-table th {
+    font-size: 1em !important;
+    font-weight: bold !important;
+    color: #ff4081 !important;
+}
+
+.custom-table {
+    width: 1000px !important;
+}

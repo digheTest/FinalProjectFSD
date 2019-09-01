@@ -101,9 +101,34 @@ export class TaskFormComponent {
           .get("endDate")
           .setValidators([Validators.required, validDateCheck]);
         this.taskForm.get("user").setValidators([Validators.required]);
+        this.taskForm.setValidators([validDateRangeUnconditional, validTask]);
 
         this.taskForm.get("parentTask").clearValidators();
       } else {
+        this.taskForm.get("project").setValue(undefined);
+        this.taskForm.get("projectID").setValue(undefined);
+        this.taskForm.get("task").setValue(undefined);
+        this.taskForm.get("taskID").setValue(undefined);
+        this.taskForm.get("priority").setValue(undefined);
+        this.taskForm.get("startDate").setValue(undefined);
+        this.taskForm.get("endDate").setValue(undefined);
+        this.taskForm.get("user").setValue(undefined);
+        this.taskForm.get("userID").setValue(undefined);
+
+        this.selectedProject = undefined;
+        this.selectedParentTask = undefined;
+        this.selectedUser = undefined;
+
+        this.taskFormModel.project = undefined;
+        this.taskFormModel.projectID = undefined;
+        this.taskFormModel.task = undefined;
+        this.taskFormModel.taskID = undefined;
+        this.taskFormModel.priority = undefined;
+        this.taskFormModel.startDate = undefined;
+        this.taskFormModel.endDate = undefined;
+        this.taskFormModel.user = undefined;
+        this.taskFormModel.userID = undefined;
+
         this.taskForm.get("project").clearValidators();
         this.taskForm.get("priority").clearValidators();
         this.taskForm.get("task").clearValidators();
@@ -112,6 +137,7 @@ export class TaskFormComponent {
         this.taskForm.get("user").clearValidators();
 
         this.taskForm.get("parentTask").setValidators([Validators.required]);
+        this.taskForm.clearValidators();
       }
       this.taskForm.get("project").updateValueAndValidity();
       this.taskForm.get("priority").updateValueAndValidity();
@@ -133,7 +159,6 @@ export class TaskFormComponent {
     this.projectService.getAllProjects().subscribe(projects => {
       const projectList = Utils.convertProjectsToItems(projects);
       const dialogRef = this.dialog.open(ItemSelectionDialogComponent, {
-        disableClose: true,
         data: new DialogDataModel({
           itemType: "Project",
           title: "Select Project",
@@ -162,7 +187,6 @@ export class TaskFormComponent {
     this.taskService.getAllParentTasks().subscribe(parentTasks => {
       const parentTaskList = Utils.convertParentTasksToItems(parentTasks);
       const dialogRef = this.dialog.open(ItemSelectionDialogComponent, {
-        disableClose: true,
         data: new DialogDataModel({
           itemType: "Parent Task",
           title: "Select Parent Task",
@@ -196,7 +220,6 @@ export class TaskFormComponent {
       this.allUsers = users;
       const userList = Utils.convertUsersToItems(users);
       const dialogRef = this.dialog.open(ItemSelectionDialogComponent, {
-        disableClose: true,
         data: new DialogDataModel({
           itemType: "User",
           title: "Select User",

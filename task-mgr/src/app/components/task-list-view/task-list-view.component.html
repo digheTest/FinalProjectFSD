@@ -2,7 +2,7 @@
   <input matInput (keyup)="search($event.target.value)" placeholder="Search" />
 </mat-form-field>
 
-<table mat-table [dataSource]="dataSource" matSort style="width: 800px;">
+<table mat-table [dataSource]="dataSource" matSort class="custom-table">
   <ng-container matColumnDef="task">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Task</th>
     <td mat-cell *matCellDef="let taskFormModel">
@@ -40,17 +40,21 @@
         mat-raised-button
         [disabled]="taskFormModel.isCompleted"
         (click)="editAction(taskFormModel)"
-        style="margin-right: 10px;"
+        class="margin-right-small"
+        color="primary"
       >
         Edit
       </button>
-      <button
-        mat-raised-button
-        [disabled]="taskFormModel.isCompleted"
-        (click)="endAction(taskFormModel)"
-      >
-        End Task
-      </button>
+      <span *ngIf="!taskFormModel.isParentTask">
+        <button
+          mat-raised-button
+          [disabled]="taskFormModel.isCompleted"
+          (click)="endAction(taskFormModel)"
+          color="warn"
+        >
+          End Task
+        </button>
+      </span>
     </td>
   </ng-container>
 
