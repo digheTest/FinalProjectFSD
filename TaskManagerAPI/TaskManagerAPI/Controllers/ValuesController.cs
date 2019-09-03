@@ -37,7 +37,11 @@ namespace TaskManagerAPI.Controllers
 
             allParentTask.Add(newParent);
 
-            return allParentTask.Select(p => _modelFactory.GetParentTaskMoDel(p));
+            IEnumerable<ParentTaskModel> allTasks = allParentTask.Select(p => _modelFactory.GetParentTaskMoDel(p));
+
+            allTasks = allTasks.Where(p => p.ParentTaskID != 0).ToList();
+
+            return allTasks;
         }
 
         [HttpGet]

@@ -59,6 +59,5 @@ C:\Users\Admin\Source\Repos\FinalProjectFSD\TaskManagerAPI\TaskManagerReference\
 C:\Users\Admin\Source\Repos\FinalProjectFSD\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Admin\Source\Repos\FinalProjectFSD\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Source\Repos\FinalProjectFSD\TaskManagerAPI\TaskManagerReference\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Admin\Source\Repos\FinalProjectFSD\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Source\Repos\FinalProjectFSD\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.dll
 C:\Users\Admin\Source\Repos\FinalProjectFSD\TaskManagerAPI\TaskManagerReference\obj\Debug\TaskManagerReference.pdb
