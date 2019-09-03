@@ -11,7 +11,7 @@ import { of } from "rxjs";
   providedIn: "root"
 })
 export class TaskService {
-  static BASE_URL = "https://localhost:44366/api/values";
+  static BASE_URL = "https://localhost:8095/api/values";
 
   tasks: Array<Task> = [];
   parentTasks: Array<ParentTask> = [];
